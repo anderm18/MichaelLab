@@ -1,4 +1,5 @@
 import { Menu} from 'antd';
+import { Link } from 'react-router-dom';
 
 
 export default function NavBar() {
@@ -7,9 +8,18 @@ export default function NavBar() {
         <Menu 
             mode="horizontal"
             defaultSelectedKeys={['1']}
-            items={[{key: 1, label: "About"}, {key: 2, label: "Blog"}, {key: 3, label: "API"}]}
             style={{ flex: 1, minWidth: 0 }}
-        />
+        >
+            <Menu.Item key="1">
+                <Link to="/">About</Link>
+            </Menu.Item>
+            <Menu.Item key="2">
+                <Link to="/blog">Blog</Link>
+            </Menu.Item>
+            <Menu.Item key="3">
+                <Link to="/api">API</Link>
+            </Menu.Item>
+        </Menu>
   
     );
 }
